@@ -51,7 +51,7 @@
     }
     
     NSString *icon = [FontAwesome stringForIcon:identifier];
-	if (icon != nil) 
+	if (icon != nil) {
 	    NSRange iconRange = NSMakeRange(0, icon.length);
 	    UIColor *backgroundColor = [UIColor clearColor];
 	    CGRect textRect = CGRectMake(0, 0, size.width, size.height);
