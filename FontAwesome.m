@@ -1,33 +1,33 @@
 /**
-*
-* FontAwesome.m
-* FontAwesome
-*
-* The MIT License (MIT)
-*
-* Copyright (c) 2015 Cobaltians
-*
-* Inspired from the ios-fontawesome project made by Alex Usbergo available at https://github.com/alexdrone/ios-fontawesome
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in
-* all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-* THE SOFTWARE.
-*
-*/
+ *
+ * FontAwesome.m
+ * FontAwesome
+ *
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2015 Cobaltians
+ *
+ * Inspired from the ios-fontawesome project made by Alex Usbergo available at https://github.com/alexdrone/ios-fontawesome
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ */
 
 #import "FontAwesome.h"
 
@@ -43,29 +43,29 @@
                      color:(UIColor *)color
                    andSize:(CGFloat)size {
     NSString *icon = [FontAwesome stringForIcon:identifier];
-	if (icon != nil) {
+    if (icon != nil) {
         NSRange iconRange = NSMakeRange(0, icon.length);
         UIFont *font = [UIFont fontWithName:@"FontAwesome"
-                                       size:size];
-	    UIColor *backgroundColor = [UIColor clearColor];
-	    
-	    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-	    paragraphStyle.alignment = NSTextAlignmentCenter;
+                                       size:size];                    
+        UIColor *backgroundColor = [UIColor clearColor];
     
-	    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:icon];
-	    [text addAttribute:NSFontAttributeName
-	                 value:font
-	                 range:iconRange];
-	    [text addAttribute:NSForegroundColorAttributeName
-	                 value:color
-	                 range:iconRange];
-	    [text addAttribute:NSBackgroundColorAttributeName
-	                 value:backgroundColor
-	                 range:iconRange];
-	    [text addAttribute:NSParagraphStyleAttributeName
-	                 value:paragraphStyle
-	                 range:iconRange];
-        
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.alignment = NSTextAlignmentCenter;
+    
+        NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:icon];
+        [text addAttribute:NSFontAttributeName
+                     value:font
+                     range:iconRange];
+        [text addAttribute:NSForegroundColorAttributeName
+                     value:color
+                     range:iconRange];
+        [text addAttribute:NSBackgroundColorAttributeName
+                     value:backgroundColor
+                     range:iconRange];
+        [text addAttribute:NSParagraphStyleAttributeName
+                     value:paragraphStyle
+                     range:iconRange];
+                     
         CGSize textSize = text.size;
         CGRect textRect = CGRectMake(0, 0, textSize.width, textSize.height);
         CGFloat scale = [UIScreen mainScreen].scale;
@@ -75,15 +75,15 @@
         else {
             UIGraphicsBeginImageContext(textSize);
         }
-	    [text drawInRect:textRect];
-    
-	    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-	    UIGraphicsEndImageContext();
+        [text drawInRect:textRect];
+
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
         
-	    return image;
-	}
-	
-	return nil;
+        return image;
+    }
+    
+    return nil;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -113,14 +113,11 @@
         @"fa-th": @"\uf00a",
         @"fa-th-list": @"\uf00b",
         @"fa-check": @"\uf00c",
-        @"fa-close": @"\uf00d",
         @"fa-remove": @"\uf00d",
-        @"fa-times": @"\uf00d",
         @"fa-search-plus": @"\uf00e",
         @"fa-search-minus": @"\uf010",
         @"fa-power-off": @"\uf011",
         @"fa-signal": @"\uf012",
-        @"fa-cog": @"\uf013",
         @"fa-gear": @"\uf013",
         @"fa-trash-o": @"\uf014",
         @"fa-home": @"\uf015",
@@ -132,7 +129,6 @@
         @"fa-arrow-circle-o-up": @"\uf01b",
         @"fa-inbox": @"\uf01c",
         @"fa-play-circle-o": @"\uf01d",
-        @"fa-repeat": @"\uf01e",
         @"fa-rotate-right": @"\uf01e",
         @"fa-refresh": @"\uf021",
         @"fa-list-alt": @"\uf022",
@@ -161,18 +157,14 @@
         @"fa-align-justify": @"\uf039",
         @"fa-list": @"\uf03a",
         @"fa-dedent": @"\uf03b",
-        @"fa-outdent": @"\uf03b",
         @"fa-indent": @"\uf03c",
         @"fa-video-camera": @"\uf03d",
-        @"fa-image": @"\uf03e",
         @"fa-photo": @"\uf03e",
-        @"fa-picture-o": @"\uf03e",
         @"fa-pencil": @"\uf040",
         @"fa-map-marker": @"\uf041",
         @"fa-adjust": @"\uf042",
         @"fa-tint": @"\uf043",
         @"fa-edit": @"\uf044",
-        @"fa-pencil-square-o": @"\uf044",
         @"fa-share-square-o": @"\uf045",
         @"fa-check-square-o": @"\uf046",
         @"fa-arrows": @"\uf047",
@@ -203,7 +195,6 @@
         @"fa-arrow-up": @"\uf062",
         @"fa-arrow-down": @"\uf063",
         @"fa-mail-forward": @"\uf064",
-        @"fa-share": @"\uf064",
         @"fa-expand": @"\uf065",
         @"fa-compress": @"\uf066",
         @"fa-plus": @"\uf067",
@@ -215,7 +206,6 @@
         @"fa-fire": @"\uf06d",
         @"fa-eye": @"\uf06e",
         @"fa-eye-slash": @"\uf070",
-        @"fa-exclamation-triangle": @"\uf071",
         @"fa-warning": @"\uf071",
         @"fa-plane": @"\uf072",
         @"fa-calendar": @"\uf073",
@@ -230,13 +220,11 @@
         @"fa-folder-open": @"\uf07c",
         @"fa-arrows-v": @"\uf07d",
         @"fa-arrows-h": @"\uf07e",
-        @"fa-bar-chart": @"\uf080",
         @"fa-bar-chart-o": @"\uf080",
         @"fa-twitter-square": @"\uf081",
         @"fa-facebook-square": @"\uf082",
         @"fa-camera-retro": @"\uf083",
         @"fa-key": @"\uf084",
-        @"fa-cogs": @"\uf085",
         @"fa-gears": @"\uf085",
         @"fa-comments": @"\uf086",
         @"fa-thumbs-o-up": @"\uf087",
@@ -257,16 +245,14 @@
         @"fa-bookmark-o": @"\uf097",
         @"fa-phone-square": @"\uf098",
         @"fa-twitter": @"\uf099",
-        @"fa-facebook": @"\uf09a",
         @"fa-facebook-f": @"\uf09a",
         @"fa-github": @"\uf09b",
         @"fa-unlock": @"\uf09c",
         @"fa-credit-card": @"\uf09d",
         @"fa-feed": @"\uf09e",
-        @"fa-rss": @"\uf09e",
         @"fa-hdd-o": @"\uf0a0",
         @"fa-bullhorn": @"\uf0a1",
-        @"fa-bell-o": @"\uf0a2",
+        @"fa-bell": @"\uf0f3",
         @"fa-certificate": @"\uf0a3",
         @"fa-hand-o-right": @"\uf0a4",
         @"fa-hand-o-left": @"\uf0a5",
@@ -283,22 +269,15 @@
         @"fa-briefcase": @"\uf0b1",
         @"fa-arrows-alt": @"\uf0b2",
         @"fa-group": @"\uf0c0",
-        @"fa-users": @"\uf0c0",
         @"fa-chain": @"\uf0c1",
-        @"fa-link": @"\uf0c1",
         @"fa-cloud": @"\uf0c2",
         @"fa-flask": @"\uf0c3",
         @"fa-cut": @"\uf0c4",
-        @"fa-scissors": @"\uf0c4",
         @"fa-copy": @"\uf0c5",
-        @"fa-files-o": @"\uf0c5",
         @"fa-paperclip": @"\uf0c6",
-        @"fa-floppy-o": @"\uf0c7",
         @"fa-save": @"\uf0c7",
         @"fa-square": @"\uf0c8",
-        @"fa-bars": @"\uf0c9",
         @"fa-navicon": @"\uf0c9",
-        @"fa-reorder": @"\uf0c9",
         @"fa-list-ul": @"\uf0ca",
         @"fa-list-ol": @"\uf0cb",
         @"fa-strikethrough": @"\uf0cc",
@@ -316,27 +295,19 @@
         @"fa-caret-left": @"\uf0d9",
         @"fa-caret-right": @"\uf0da",
         @"fa-columns": @"\uf0db",
-        @"fa-sort": @"\uf0dc",
         @"fa-unsorted": @"\uf0dc",
-        @"fa-sort-desc": @"\uf0dd",
         @"fa-sort-down": @"\uf0dd",
-        @"fa-sort-asc": @"\uf0de",
         @"fa-sort-up": @"\uf0de",
         @"fa-envelope": @"\uf0e0",
         @"fa-linkedin": @"\uf0e1",
         @"fa-rotate-left": @"\uf0e2",
-        @"fa-undo": @"\uf0e2",
-        @"fa-gavel": @"\uf0e3",
         @"fa-legal": @"\uf0e3",
         @"fa-dashboard": @"\uf0e4",
-        @"fa-tachometer": @"\uf0e4",
         @"fa-comment-o": @"\uf0e5",
         @"fa-comments-o": @"\uf0e6",
-        @"fa-bolt": @"\uf0e7",
         @"fa-flash": @"\uf0e7",
         @"fa-sitemap": @"\uf0e8",
         @"fa-umbrella": @"\uf0e9",
-        @"fa-clipboard": @"\uf0ea",
         @"fa-paste": @"\uf0ea",
         @"fa-lightbulb-o": @"\uf0eb",
         @"fa-exchange": @"\uf0ec",
@@ -345,7 +316,7 @@
         @"fa-user-md": @"\uf0f0",
         @"fa-stethoscope": @"\uf0f1",
         @"fa-suitcase": @"\uf0f2",
-        @"fa-bell": @"\uf0f3",
+        @"fa-bell-o": @"\uf0a2",
         @"fa-coffee": @"\uf0f4",
         @"fa-cutlery": @"\uf0f5",
         @"fa-file-text-o": @"\uf0f6",
@@ -368,7 +339,6 @@
         @"fa-desktop": @"\uf108",
         @"fa-laptop": @"\uf109",
         @"fa-tablet": @"\uf10a",
-        @"fa-mobile": @"\uf10b",
         @"fa-mobile-phone": @"\uf10b",
         @"fa-circle-o": @"\uf10c",
         @"fa-quote-left": @"\uf10d",
@@ -376,7 +346,6 @@
         @"fa-spinner": @"\uf110",
         @"fa-circle": @"\uf111",
         @"fa-mail-reply": @"\uf112",
-        @"fa-reply": @"\uf112",
         @"fa-github-alt": @"\uf113",
         @"fa-folder-o": @"\uf114",
         @"fa-folder-open-o": @"\uf115",
@@ -390,14 +359,10 @@
         @"fa-terminal": @"\uf120",
         @"fa-code": @"\uf121",
         @"fa-mail-reply-all": @"\uf122",
-        @"fa-reply-all": @"\uf122",
         @"fa-star-half-empty": @"\uf123",
-        @"fa-star-half-full": @"\uf123",
-        @"fa-star-half-o": @"\uf123",
         @"fa-location-arrow": @"\uf124",
         @"fa-crop": @"\uf125",
         @"fa-code-fork": @"\uf126",
-        @"fa-chain-broken": @"\uf127",
         @"fa-unlink": @"\uf127",
         @"fa-question": @"\uf128",
         @"fa-info": @"\uf129",
@@ -436,30 +401,17 @@
         @"fa-external-link-square": @"\uf14c",
         @"fa-share-square": @"\uf14d",
         @"fa-compass": @"\uf14e",
-        @"fa-caret-square-o-down": @"\uf150",
         @"fa-toggle-down": @"\uf150",
-        @"fa-caret-square-o-up": @"\uf151",
         @"fa-toggle-up": @"\uf151",
-        @"fa-caret-square-o-right": @"\uf152",
         @"fa-toggle-right": @"\uf152",
-        @"fa-eur": @"\uf153",
         @"fa-euro": @"\uf153",
         @"fa-gbp": @"\uf154",
         @"fa-dollar": @"\uf155",
-        @"fa-usd": @"\uf155",
-        @"fa-inr": @"\uf156",
         @"fa-rupee": @"\uf156",
         @"fa-cny": @"\uf157",
-        @"fa-jpy": @"\uf157",
-        @"fa-rmb": @"\uf157",
-        @"fa-yen": @"\uf157",
-        @"fa-rouble": @"\uf158",
-        @"fa-rub": @"\uf158",
         @"fa-ruble": @"\uf158",
-        @"fa-krw": @"\uf159",
         @"fa-won": @"\uf159",
         @"fa-bitcoin": @"\uf15a",
-        @"fa-btc": @"\uf15a",
         @"fa-file": @"\uf15b",
         @"fa-file-text": @"\uf15c",
         @"fa-sort-alpha-asc": @"\uf15d",
@@ -499,7 +451,6 @@
         @"fa-female": @"\uf182",
         @"fa-male": @"\uf183",
         @"fa-gittip": @"\uf184",
-        @"fa-gratipay": @"\uf184",
         @"fa-sun-o": @"\uf185",
         @"fa-moon-o": @"\uf186",
         @"fa-archive": @"\uf187",
@@ -511,12 +462,10 @@
         @"fa-stack-exchange": @"\uf18d",
         @"fa-arrow-circle-o-right": @"\uf18e",
         @"fa-arrow-circle-o-left": @"\uf190",
-        @"fa-caret-square-o-left": @"\uf191",
         @"fa-toggle-left": @"\uf191",
         @"fa-dot-circle-o": @"\uf192",
         @"fa-wheelchair": @"\uf193",
         @"fa-vimeo-square": @"\uf194",
-        @"fa-try": @"\uf195",
         @"fa-turkish-lira": @"\uf195",
         @"fa-plus-square-o": @"\uf196",
         @"fa-space-shuttle": @"\uf197",
@@ -524,10 +473,7 @@
         @"fa-envelope-square": @"\uf199",
         @"fa-wordpress": @"\uf19a",
         @"fa-openid": @"\uf19b",
-        @"fa-bank": @"\uf19c",
         @"fa-institution": @"\uf19c",
-        @"fa-university": @"\uf19c",
-        @"fa-graduation-cap": @"\uf19d",
         @"fa-mortar-board": @"\uf19d",
         @"fa-yahoo": @"\uf19e",
         @"fa-google": @"\uf1a0",
@@ -537,7 +483,7 @@
         @"fa-stumbleupon": @"\uf1a4",
         @"fa-delicious": @"\uf1a5",
         @"fa-digg": @"\uf1a6",
-        @"fa-pied-piper": @"\uf1a7",
+        @"fa-pied-piper-pp": @"\uf1a7",
         @"fa-pied-piper-alt": @"\uf1a8",
         @"fa-drupal": @"\uf1a9",
         @"fa-joomla": @"\uf1aa",
@@ -555,9 +501,7 @@
         @"fa-steam-square": @"\uf1b7",
         @"fa-recycle": @"\uf1b8",
         @"fa-automobile": @"\uf1b9",
-        @"fa-car": @"\uf1b9",
         @"fa-cab": @"\uf1ba",
-        @"fa-taxi": @"\uf1ba",
         @"fa-tree": @"\uf1bb",
         @"fa-spotify": @"\uf1bc",
         @"fa-deviantart": @"\uf1bd",
@@ -567,41 +511,25 @@
         @"fa-file-word-o": @"\uf1c2",
         @"fa-file-excel-o": @"\uf1c3",
         @"fa-file-powerpoint-o": @"\uf1c4",
-        @"fa-file-image-o": @"\uf1c5",
         @"fa-file-photo-o": @"\uf1c5",
-        @"fa-file-picture-o": @"\uf1c5",
-        @"fa-file-archive-o": @"\uf1c6",
         @"fa-file-zip-o": @"\uf1c6",
-        @"fa-file-audio-o": @"\uf1c7",
         @"fa-file-sound-o": @"\uf1c7",
         @"fa-file-movie-o": @"\uf1c8",
-        @"fa-file-video-o": @"\uf1c8",
         @"fa-file-code-o": @"\uf1c9",
         @"fa-vine": @"\uf1ca",
         @"fa-codepen": @"\uf1cb",
         @"fa-jsfiddle": @"\uf1cc",
         @"fa-life-bouy": @"\uf1cd",
-        @"fa-life-buoy": @"\uf1cd",
-        @"fa-life-ring": @"\uf1cd",
-        @"fa-life-saver": @"\uf1cd",
-        @"fa-support": @"\uf1cd",
         @"fa-circle-o-notch": @"\uf1ce",
         @"fa-ra": @"\uf1d0",
-        @"fa-rebel": @"\uf1d0",
-        @"fa-empire": @"\uf1d1",
         @"fa-ge": @"\uf1d1",
         @"fa-git-square": @"\uf1d2",
         @"fa-git": @"\uf1d3",
-        @"fa-hacker-news": @"\uf1d4",
         @"fa-y-combinator-square": @"\uf1d4",
-        @"fa-yc-square": @"\uf1d4",
         @"fa-tencent-weibo": @"\uf1d5",
         @"fa-qq": @"\uf1d6",
         @"fa-wechat": @"\uf1d7",
-        @"fa-weixin": @"\uf1d7",
-        @"fa-paper-plane": @"\uf1d8",
         @"fa-send": @"\uf1d8",
-        @"fa-paper-plane-o": @"\uf1d9",
         @"fa-send-o": @"\uf1d9",
         @"fa-history": @"\uf1da",
         @"fa-circle-thin": @"\uf1db",
@@ -611,7 +539,6 @@
         @"fa-share-alt": @"\uf1e0",
         @"fa-share-alt-square": @"\uf1e1",
         @"fa-bomb": @"\uf1e2",
-        @"fa-futbol-o": @"\uf1e3",
         @"fa-soccer-ball-o": @"\uf1e3",
         @"fa-tty": @"\uf1e4",
         @"fa-binoculars": @"\uf1e5",
@@ -650,9 +577,7 @@
         @"fa-ioxhost": @"\uf208",
         @"fa-angellist": @"\uf209",
         @"fa-cc": @"\uf20a",
-        @"fa-ils": @"\uf20b",
         @"fa-shekel": @"\uf20b",
-        @"fa-sheqel": @"\uf20b",
         @"fa-meanpath": @"\uf20c",
         @"fa-buysellads": @"\uf20d",
         @"fa-connectdevelop": @"\uf20e",
@@ -675,7 +600,6 @@
         @"fa-mars": @"\uf222",
         @"fa-mercury": @"\uf223",
         @"fa-intersex": @"\uf224",
-        @"fa-transgender": @"\uf224",
         @"fa-transgender-alt": @"\uf225",
         @"fa-venus-double": @"\uf226",
         @"fa-mars-double": @"\uf227",
@@ -691,27 +615,20 @@
         @"fa-server": @"\uf233",
         @"fa-user-plus": @"\uf234",
         @"fa-user-times": @"\uf235",
-        @"fa-bed": @"\uf236",
         @"fa-hotel": @"\uf236",
         @"fa-viacoin": @"\uf237",
         @"fa-train": @"\uf238",
         @"fa-subway": @"\uf239",
         @"fa-medium": @"\uf23a",
-        @"fa-y-combinator": @"\uf23b",
         @"fa-yc": @"\uf23b",
         @"fa-optin-monster": @"\uf23c",
         @"fa-opencart": @"\uf23d",
         @"fa-expeditedssl": @"\uf23e",
         @"fa-battery-4": @"\uf240",
-        @"fa-battery-full": @"\uf240",
         @"fa-battery-3": @"\uf241",
-        @"fa-battery-three-quarters": @"\uf241",
         @"fa-battery-2": @"\uf242",
-        @"fa-battery-half": @"\uf242",
         @"fa-battery-1": @"\uf243",
-        @"fa-battery-quarter": @"\uf243",
         @"fa-battery-0": @"\uf244",
-        @"fa-battery-empty": @"\uf244",
         @"fa-mouse-pointer": @"\uf245",
         @"fa-i-cursor": @"\uf246",
         @"fa-object-group": @"\uf247",
@@ -724,15 +641,10 @@
         @"fa-balance-scale": @"\uf24e",
         @"fa-hourglass-o": @"\uf250",
         @"fa-hourglass-1": @"\uf251",
-        @"fa-hourglass-start": @"\uf251",
         @"fa-hourglass-2": @"\uf252",
-        @"fa-hourglass-half": @"\uf252",
         @"fa-hourglass-3": @"\uf253",
-        @"fa-hourglass-end": @"\uf253",
         @"fa-hourglass": @"\uf254",
         @"fa-hand-grab-o": @"\uf255",
-        @"fa-hand-rock-o": @"\uf255",
-        @"fa-hand-paper-o": @"\uf256",
         @"fa-hand-stop-o": @"\uf256",
         @"fa-hand-scissors-o": @"\uf257",
         @"fa-hand-lizard-o": @"\uf258",
@@ -754,7 +666,6 @@
         @"fa-firefox": @"\uf269",
         @"fa-opera": @"\uf26a",
         @"fa-internet-explorer": @"\uf26b",
-        @"fa-television": @"\uf26c",
         @"fa-tv": @"\uf26c",
         @"fa-contao": @"\uf26d",
         @"fa-500px": @"\uf26e",
@@ -793,7 +704,36 @@
         @"fa-hashtag": @"\uf292",
         @"fa-bluetooth": @"\uf293",
         @"fa-bluetooth-b": @"\uf294",
-        @"fa-percent": @"\uf295"};
+        @"fa-percent": @"\uf295",
+        @"fa-gitlab": @"\uf296",
+        @"fa-wpbeginner": @"\uf297",
+        @"fa-wpforms": @"\uf298",
+        @"fa-envira": @"\uf299",
+        @"fa-universal-access": @"\uf29a",
+        @"fa-wheelchair-alt": @"\uf29b",
+        @"fa-question-circle-o": @"\uf29c",
+        @"fa-blind": @"\uf29d",
+        @"fa-audio-description": @"\uf29e",
+        @"fa-volume-control-phone": @"\uf2a0",
+        @"fa-braille": @"\uf2a1",
+        @"fa-assistive-listening-systems": @"\uf2a2",
+        @"fa-asl-interpreting": @"\uf2a3",
+        @"fa-deafness": @"\uf2a4",
+        @"fa-glide": @"\uf2a5",
+        @"fa-glide-g": @"\uf2a6",
+        @"fa-signing": @"\uf2a7",
+        @"fa-low-vision": @"\uf2a8",
+        @"fa-viadeo": @"\uf2a9",
+        @"fa-viadeo-square": @"\uf2aa",
+        @"fa-snapchat": @"\uf2ab",
+        @"fa-snapchat-ghost": @"\uf2ac",
+        @"fa-snapchat-square": @"\uf2ad",
+        @"fa-pied-piper": @"\uf2ae",
+        @"fa-first-order": @"\uf2b0",
+        @"fa-yoast": @"\uf2b1",
+        @"fa-themeisle": @"\uf2b2",
+        @"fa-google-plus-circle": @"\uf2b3",
+        @"fa-fa": @"\uf2b4"};
     });
     
     return glyphDictionary;
